@@ -3,14 +3,13 @@
 function getBiggest(x, y) {
   //x and y are integers.  Return the larger integer
   //if they are the same return either one
-  if ((x >= y )
+  if ((x >= y ))
   {
     return x;
   }
-  else
-  {
-    return y;
-  }
+
+  return y;
+
 }
 
 function greeting(language) {
@@ -19,11 +18,11 @@ function greeting(language) {
   //language: 'English' -> 'Hello!'
   //language: 'Spanish' -> 'Hola!'
   //if language is undefined return 'Hello!'
-  if (language.toUpperCase()==='GERMAN')
+  if (language==='German')
   {
     return 'Guten Tag!';
   }
-  else if (language.toUpperCase()==='SPANISH')
+  else if (language==='Spanish')
   {
     return 'Hola!';
   }
@@ -72,16 +71,17 @@ function fizzBuzz(num) {
   //if num is divisible by 5 return 'buzz'
   //if num is divisible by 3 & 5 return 'fizzbuzz'
   //otherwise return num
-  if((num%3)===0)
+
+  if(((num%3)===0)&&((num%5)===0)){
+    return 'fizzbuzz';
+  }
+  else if((num%3)===0)
   {
     return 'fizz';
   }
   else if ((num%5)===0)
   {
     return 'buzz';
-  }
-  else if(((num%3)===0)&&((num%5)===0)){
-    return 'fizzbuzz';
   }
   return num;
 }
@@ -92,18 +92,23 @@ function isPrime(num) {
   //hint: a prime number is only evenly divisible by itself and 1
   //hint2: you can solve this using a for loop
   //note: 0 and 1 are NOT considered prime numbers
+
   if (num === 2)
   {
     return true;
+  }
+  else if ((num === 0)||(num === 1))
+  {
+    return false;
   }
   for (var i = 2; i<num; i++)
   {
     if((num%i)===0)
     {
-      return false;
+      false;
     }
-
   }
+    return true;
 }
 
 function returnFirst(arr) {
@@ -153,10 +158,10 @@ function wordsToSentence(words) {
   //return a string that is all of the words concatenated together
   //spaces need to be between each word
   //example: ['Hello', 'world!'] -> 'Hello world!'
-  var sentence;
-  for(var i = 0; i<words.length; i++)
+  var sentence = words[0];
+  for(var i = 1; i<words.length; i++)
   {
-    sentence += words[i];
+    sentence =sentence + ' '+ words[i];
   }
   return sentence;
 }
