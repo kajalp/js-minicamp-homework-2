@@ -105,7 +105,7 @@ function isPrime(num) {
   {
     if((num%i)===0)
     {
-      false;
+      return false;
     }
   }
     return true;
